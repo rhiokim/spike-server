@@ -6,7 +6,10 @@ const db = require('../libs/db')
 router.route('/')
   .get((req, res, next) => {
     db.query('naxsi_rules/all', {
-      limit: 0 // don't return any results
+      include_docs: true,
+      descending: true,
+      skip: 0,
+      limit: 50
     }).then(result => {
       res.send(result)
     }).catch(err => {
@@ -15,8 +18,7 @@ router.route('/')
     })
   })
   .post((req, res, next) => {
-    console.log(req.body)
-    db.put(req.body)
+    db.put(Object.assign({type: 'rule'}, req.body))
       .then(result => {
         res.send(result)
       })
@@ -39,7 +41,7 @@ router.get('/:id', (req, res) => {
 })
 
 router.put('/:id', (req, res) => {
-  db.put(req.body)
+  db.put(Object.assign({type: 'rule'}, req.body))
     .then(result => {
       res.send(result)
     }).catch(err => {
@@ -49,7 +51,7 @@ router.put('/:id', (req, res) => {
 })
 
 router.delete('/:id', (req, res, next) => {
-  db.remove(req.params.id, req.params.rev)
+  db.remove(req.params.id, req.body._rev)
     .then(result => {
       res.send(result)
     })

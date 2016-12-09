@@ -24,7 +24,7 @@ const rulesets = {
   views: {
     all: {
       map: function (doc) {
-        if (doc.type === 'rulesets') {
+        if (doc.type === 'ruleset') {
           emit(doc.id, null)
         }
       }.toString()
@@ -36,7 +36,7 @@ const whitelist = {
   views: {
     all: {
       map: function (doc) {
-        if (doc.type === 'whitelist') {
+        if (doc.type === 'whiterule') {
           emit(doc.id, null)
         }
       }.toString()
@@ -48,7 +48,7 @@ const whitelistsets = {
   views: {
     all: {
       map: function (doc) {
-        if (doc.type === 'whitelistsets') {
+        if (doc.type === 'whiteruleset') {
           emit(doc.id, null)
         }
       }.toString()
