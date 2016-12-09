@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/rhiokim/spike-server#readme",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "express-routemap": "^1.0.2",
     "pouchdb": "^6.0.7",
@@ -41,6 +42,7 @@
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^2.0.1",
     "ghooks": "^1.3.2",
+    "mkdirp": "^0.5.1",
     "nsp": "^2.6.2",
     "validate-commit-msg": "^2.8.2"
   },

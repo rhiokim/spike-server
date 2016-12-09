@@ -4,7 +4,7 @@ const router = express.Router()
 const db = require('../libs/db')
 
 router.get('/', (req, res) => {
-  db.query('naxsi_rulesets/all', {
+  db.query('naxsi_whitelist/all', {
     limit: 0 // don't return any results
   }).then(result => {
     res.send(result)

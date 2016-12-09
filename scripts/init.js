@@ -1,7 +1,10 @@
 /* global emit */
 const PouchDB = require('pouchdb')
+const mkdirp = require('mkdirp')
 
-const db = new PouchDB('.storage')
+mkdirp('.storage')
+
+const db = new PouchDB('.storage/db')
 
 const rules = {
   _id: '_design/naxsi_rules',
