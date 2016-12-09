@@ -8,7 +8,7 @@ MAINTAINER Rhio Kim <rhio.kim@gmail.com>
 RUN mkdir -p server
 WORKDIR server
 
-COPY lib lib
+COPY libs libs
 COPY index.js index.js
 COPY package.json package.json
 
