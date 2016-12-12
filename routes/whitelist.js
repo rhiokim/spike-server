@@ -5,8 +5,11 @@ const db = require('../libs/db')
 
 router.route('/')
   .get((req, res, next) => {
-    db.query('naxsi_whiterule/all', {
-      limit: 0 // don't return any results
+    db.query('naxsi_whitelist/all', {
+      include_docs: true,
+      descending: true,
+      skip: 0,
+      limit: 50
     }).then(result => {
       res.send(result)
     }).catch(err => {
