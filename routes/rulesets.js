@@ -24,9 +24,7 @@ router.route('/')
         res.json(err)
       })
   })
-  // .post(function (req, res, next) {
-  //   next(new Error('not implemented'))
-  // })
+
 router.get('/:id', (req, res) => {
   db.get(req.params.id)
     .then(result => {

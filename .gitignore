@@ -3,3 +3,5 @@
 node_modules
 .storage*
 test/db
+log.txt
+config.json

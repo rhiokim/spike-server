@@ -4,7 +4,7 @@ const mkdirp = require('mkdirp')
 
 mkdirp('.storage')
 
-const db = new PouchDB('.storage/db')
+const db = new PouchDB('.storage/naxsi')
 
 const rules = {
   _id: '_design/naxsi_rules',
