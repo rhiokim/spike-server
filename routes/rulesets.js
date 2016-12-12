@@ -6,7 +6,10 @@ const db = require('../libs/db')
 router.route('/')
   .get((req, res, next) => {
     db.query('naxsi_rulesets/all', {
-      limit: 0 // don't return any results
+      include_docs: true,
+      descending: true,
+      skip: 0,
+      limit: 50
     }).then(result => {
       res.send(result)
     }).catch(err => {
