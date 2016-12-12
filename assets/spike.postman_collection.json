@@ -1,0 +1,363 @@
+{
+	"variables": [],
+	"info": {
+		"name": "spike",
+		"_postman_id": "a739178e-cd4d-b7c9-b120-41e689bebb85",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "rules",
+			"request": {
+				"url": "localhost:8082/rules",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "rule",
+			"request": {
+				"url": "localhost:8082/rules/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"_id\": \"2\",\n  \"msg\": \"test-rule2\",\n  \"detection\": \"str:xxx\",\n  \"mz\": \"BODY\",\n  \"score\": \"$SQL:8\",\n  \"sid\": 200002,\n  \"ruleset\": \"\",\n  \"rmks\": \"\",\n  \"active\": 1,\n  \"negative\": 0\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "rule",
+			"request": {
+				"url": "localhost:8082/rules/1",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "rule",
+			"request": {
+				"url": "localhost:8082/rules/1",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"_rev\": \"2-9020ea8ed3bfd617d8e998a7a13c7af1\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "rule",
+			"request": {
+				"url": "localhost:8082/rules/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"msg\": \"test-rule1111111\",\n  \"detection\": \"str:xxx\",\n  \"mz\": \"BODY\",\n  \"score\": \"$SQL:8\",\n  \"sid\": 200001,\n  \"ruleset\": \"\",\n  \"rmks\": \"\",\n  \"active\": 1,\n  \"negative\": 0\n  \"_id\": \"1\",\n  \"_rev\": \"1-3918c5a999d3732e48cb5c2345f944af\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "rulesets",
+			"request": {
+				"url": "localhost:8082/rulesets/",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "ruleset",
+			"request": {
+				"url": "localhost:8082/rulesets/4",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "ruleset",
+			"request": {
+				"url": "localhost:8082/rulesets",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"_id\": \"4\",\n  \"name\": \"WEB_SERVER_RULE\",\n  \"remarks\": \"\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "ruleset",
+			"request": {
+				"url": "localhost:8082/rulesets/4",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"_id\": \"4\",\n  \"_rev\": \"1-7a70be4ed6b8494718178d9761e7e998\",\n  \"name\": \"BLOG_SERVER_RULE\",\n  \"remarks\": \"\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "ruleset",
+			"request": {
+				"url": "localhost:8082/rulesets/4",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"_rev\": \"2-7ead17fcaacf54ffc2fd2bcbd9d451ed\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "whitelists",
+			"request": {
+				"url": "localhost:8082/whitelist/",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "whitelist",
+			"request": {
+				"url": "localhost:8082/whitelist/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"_id\": \"2\",\n  \"wl\": \"test-rule2\",\n  \"mz\": \"str:xxx\",\n  \"negative\": \"BODY\",\n  \"active\": \"$SQL:8\",\n  \"whitelistset\": \"\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "whitelist",
+			"request": {
+				"url": "localhost:8082/whitelist/1",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "whitelist",
+			"request": {
+				"url": "localhost:8082/whitelist/1",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"_rev\": \"2-9020ea8ed3bfd617d8e998a7a13c7af1\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "whitelist",
+			"request": {
+				"url": "localhost:8082/whitelist/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"_id\": \"2\",\n  \"wl\": \"test-rule2\",\n  \"mz\": \"str:xxx\",\n  \"negative\": 0,\n  \"active\": 1,\n  \"whitelistset\": \"\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "whitelist sets",
+			"request": {
+				"url": "localhost:8082/whitelistsets/",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "whitelist set",
+			"request": {
+				"url": "localhost:8082/whitelistsets",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"_id\": \"4\",\n  \"name\": \"WEB_SERVER_RULE\",\n  \"remarks\": \"\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "whitelist set",
+			"request": {
+				"url": "localhost:8082/whitelistsets/4",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "whitelist set",
+			"request": {
+				"url": "localhost:8082/whitelistsets/4",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"_id\": \"4\",\n  \"_rev\": \"1-7a70be4ed6b8494718178d9761e7e998\",\n  \"name\": \"BLOG_SERVER_RULE\",\n  \"remarks\": \"\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "whitelist set",
+			"request": {
+				"url": "localhost:8082/whitelistsets/4",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"_rev\": \"2-7ead17fcaacf54ffc2fd2bcbd9d451ed\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

@@ -18,7 +18,7 @@ router.route('/')
     })
   })
   .post((req, res, next) => {
-    db.put(Object.assign({type: 'whiteruleset'}, req.body))
+    db.put(Object.assign({type: 'whiteruleset', timestamp: new Date().getTime()}, req.body))
       .then(result => {
         res.send(result)
       })
@@ -39,7 +39,7 @@ router.get('/:id', (req, res) => {
 })
 
 router.put('/:id', (req, res) => {
-  db.put(Object.assign({type: 'whiteruleset'}, req.body))
+  db.put(Object.assign({type: 'whiteruleset', timestamp: new Date().getTime()}, req.body))
     .then(result => {
       res.send(result)
     }).catch(err => {
