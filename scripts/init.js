@@ -12,7 +12,7 @@ const rules = {
     all: {
       map: function (doc) {
         if (doc.type === 'rule') {
-          emit(doc.id, null)
+          emit(doc)
         }
       }.toString()
     }
@@ -25,7 +25,7 @@ const rulesets = {
     all: {
       map: function (doc) {
         if (doc.type === 'ruleset') {
-          emit(doc.id, null)
+          emit(doc)
         }
       }.toString()
     }
@@ -37,7 +37,7 @@ const whitelist = {
     all: {
       map: function (doc) {
         if (doc.type === 'whiterule') {
-          emit(doc.id, null)
+          emit(doc)
         }
       }.toString()
     }
@@ -49,7 +49,31 @@ const whitelistsets = {
     all: {
       map: function (doc) {
         if (doc.type === 'whiteruleset') {
-          emit(doc.id, null)
+          emit(doc)
+        }
+      }.toString()
+    }
+  }
+}
+const matchingzones = {
+  _id: '_design/naxsi_matchingzone',
+  views: {
+    all: {
+      map: function (doc) {
+        if (doc.type === 'mz') {
+          emit(doc)
+        }
+      }.toString()
+    }
+  }
+}
+const scores = {
+  _id: '_design/naxsi_scores',
+  views: {
+    all: {
+      map: function (doc) {
+        if (doc.type === 'score') {
+          emit(doc)
         }
       }.toString()
     }
@@ -81,4 +105,16 @@ db.put(whitelistsets).then(() => {
   console.log('success whitelistsets')
 }).catch(err => {
   console.log('%s %s', err.message, whitelistsets._id)
+})
+
+db.put(matchingzones).then(() => {
+  console.log('success matchingzones')
+}).catch(err => {
+  console.log('%s %s', err.message, matchingzones._id)
+})
+
+db.put(scores).then(() => {
+  console.log('success scores')
+}).catch(err => {
+  console.log('%s %s', err.message, scores._id)
 })

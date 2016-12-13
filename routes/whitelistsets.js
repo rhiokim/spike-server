@@ -6,7 +6,6 @@ const db = require('../libs/db')
 router.route('/')
   .get((req, res, next) => {
     db.query('naxsi_whitelistsets/all', {
-      include_docs: true,
       descending: true,
       skip: 0,
       limit: 50
