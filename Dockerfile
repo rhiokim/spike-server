@@ -2,13 +2,13 @@ FROM mhart/alpine-node:7
 # FROM node:latest
 MAINTAINER Rhio Kim <rhio.kim@gmail.com>
 
-# RUN apk add --no-cache git openssh
-
 # Copy package first to cache npm-install and speed up build
 RUN mkdir -p server
 WORKDIR server
 
 COPY libs libs
+COPY routes routes
+COPY scripts scripts
 COPY index.js index.js
 COPY package.json package.json
 

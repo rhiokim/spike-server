@@ -20,6 +20,8 @@ const rules = require('./routes/rules')
 const rulesets = require('./routes/rulesets')
 const whitelist = require('./routes/whitelist')
 const whitelistsets = require('./routes/whitelistsets')
+const matchingzones = require('./routes/matchingzones')
+const scores = require('./routes/scores')
 
 // app.use((req, res, next) => {
 //   getRawBody(req, {
@@ -36,6 +38,8 @@ app.use('/rules', rules)
 app.use('/rulesets', rulesets)
 app.use('/whitelist', whitelist)
 app.use('/whitelistsets', whitelistsets)
+app.use('/matchingzones', matchingzones)
+app.use('/scores', scores)
 
 http.createServer(app).listen(PORT, () => {
   displayRoutes(app)

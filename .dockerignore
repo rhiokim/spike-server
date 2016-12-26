@@ -4,6 +4,9 @@
 
 # src
 node_modules/
-.eslintignore
+.eslint*
 .git*
 *.md
+.storage
+assets
+test

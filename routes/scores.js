@@ -5,7 +5,7 @@ const db = require('../libs/db')
 
 router.route('/')
   .get((req, res, next) => {
-    db.query('naxsi_rules/all', {
+    db.query('naxsi_scores/all', {
       descending: true,
       skip: 0,
       limit: 50
@@ -17,7 +17,7 @@ router.route('/')
     })
   })
   .post((req, res, next) => {
-    db.put(Object.assign({type: 'rule', timestamp: new Date().getTime()}, req.body))
+    db.put(Object.assign({type: 'score', timestamp: new Date().getTime()}, req.body))
       .then(result => {
         res.send(result)
       })
@@ -38,7 +38,7 @@ router.get('/:id', (req, res) => {
 })
 
 router.put('/:id', (req, res) => {
-  db.put(Object.assign({type: 'rule', timestamp: new Date().getTime()}, req.body))
+  db.put(Object.assign({type: 'score', timestamp: new Date().getTime()}, req.body))
     .then(result => {
       res.send(result)
     }).catch(err => {
